@@ -90,15 +90,15 @@ func (m model) View() string {
 	return docStyle.Render(doc.String())
 }
 
-func main() {
-	tabs := []string{"UnRead", "Read"}
-	tabContent := []string{"UnRead books go here..", "Read books go here"}
-	m := model{Tabs: tabs, TabContent: tabContent}
-	if _, err := tea.NewProgram(m).Run(); err != nil {
-		fmt.Println("Error running program:", err)
-		os.Exit(1)
-	}
-}
+// func main() {
+// 	tabs := []string{"UnRead", "Read"}
+// 	tabContent := []string{"UnRead books go here..", "Read books go here"}
+// 	m := model{Tabs: tabs, TabContent: tabContent}
+// 	if _, err := tea.NewProgram(m).Run(); err != nil {
+// 		fmt.Println("Error running program:", err)
+// 		os.Exit(1)
+// 	}
+// }
 
 func max(a, b int) int {
 	if a > b {

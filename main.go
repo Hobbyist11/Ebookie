@@ -1,37 +1,29 @@
 package main
 
+// import (
+//   "fmt"
+//   "os"
+//   "path/filepath"
+// )
 import (
-    "fmt"
-    "os"
-    "path/filepath"
+  "fmt"
+  "os"
+  "path/filepath"
 )
-
 func main() {
-    // Get the current directory.
-    dir, err := os.Getwd()
-    if err != nil {
-        fmt.Println(err)
-        return
-    }
+// Scan the current directory (can also be set to a certain directory)   
+// filepath.Walk("/home/kenny/Downloads/", func(path string, info fs.FileInfo, err error) error {
+//     fmt.Println(path),
+//
+//     return nil
+//   }
+//
+// package main
+//
 
-    // Create a channel to store the .epub and .pdf files.
-    epubsAndPdfs := make(chan string)
 
-    // Go through all the files in the current directory.
-    for _, file := range filepath.Glob("*") {
-        // Check if the file is an .epub or .pdf file.
-        if filepath.Ext(file) == ".epub" || filepath.Ext(file) == ".pdf" {
-            // Send the file to the channel.
-            epubsAndPdfs <- file
-        }
-    }
-
-    // Close the channel.
-    close(epubsAndPdfs)
-
-    // Iterate over the channel and print the .epub and .pdf files.
-    for file := range epubsAndPdfs {
-        fmt.Println(file)
-    }
-}
-
+  filepath.Walk("/home/kenny/Downloads", func(path string, info os.FileInfo, err error) error {
+    fmt.Println(path)
+    return nil
+  })
+  }
