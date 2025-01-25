@@ -1,2 +1,2 @@
 # Ebookie
-Free open source Ebook manager based on TUI, designed to be minimal and lightweight.
+Free open source TUI based Ebook manager , designed to be minimal and lightweight.
